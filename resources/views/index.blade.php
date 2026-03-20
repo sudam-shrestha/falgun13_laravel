@@ -64,8 +64,8 @@
                 </div>
 
                 <div>
-                    <a href="" class="bg-(--primary)/90 hover:bg-(--primary) duration-200 text-white px-6 py-3 rounded-xl">
-                        Book a Career Consultation
+                    <a href="/booking" class="bg-(--primary)/90 hover:bg-(--primary) duration-200 text-white px-6 py-3 rounded-xl">
+                        Book a Career Consultant
                     </a>
                 </div>
             </div>

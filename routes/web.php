@@ -14,6 +14,11 @@ Route::get("/services", function () {
     return view("service");
 });
 
-Route::get("/welcome", function () {
-    return redirect("/");
+
+Route::get("/booking", function () {
+    return view("booking.index");
+});
+
+Route::get("/booking/create", function () {
+    return view("booking.create");
 });
