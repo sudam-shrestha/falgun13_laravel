@@ -9,26 +9,30 @@
             </div>
 
             <div>
-                <form action="" method="post">
-                    <div>
-                        <label for="full_name">Enter your full name</label>
-                        <input type="text" name="" id="full_name" class="border w-full px-2 py-1" value="yooo">
-                    </div>
-                    <div>
-                        <label for="email">Enter your email</label>
-                        <input type="email" name="" id="email" class="border w-full px-2 py-1">
-                    </div>
-                    <div>
-                        <label for="phone">Enter your phone number</label>
-                        <input type="tel" name="" id="phone" class="border w-full px-2 py-1">
-                    </div>
-                    <div>
-                        <label for="gender">Select Gender</label>
-
-                        <label for="male">Male</label>
-                        <input type="radio" name="gender" id="male" value="male">
-                        <label for="female">Female</label>
-                        <input type="radio" name="gender" id="female" value="female">
+                <form action="/booking/store" method="post">
+                    @csrf
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label for="full_name">Full name</label>
+                            <input type="text" name="full_name" id="full_name" class="border w-full px-2 py-1">
+                        </div>
+                        <div>
+                            <label for="phone">Phone number</label>
+                            <input type="tel" name="phone" id="phone" class="border w-full px-2 py-1">
+                        </div>
+                        <div>
+                            <label for="subject">Subject</label>
+                            <input type="text" name="subject" id="subject" class="border w-full px-2 py-1">
+                        </div>
+                        <div class="col-span-2">
+                            <label for="request">Your Request</label>
+                            <textarea name="your_request" id="request" rows="4" class="border w-full px-2 py-1"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="bg-(--primary)/90 hover:bg-(--primary) px-4 py-2 rounded text-white">
+                                Submit Record
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>
