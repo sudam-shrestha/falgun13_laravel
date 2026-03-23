@@ -7,9 +7,41 @@
                     add new +
                 </a>
             </div>
-
+           
             <div>
-                <table></table>
+                <table class="w-full text-center">
+                    <thead>
+                        <tr class="bg-gray-300">
+                            <th class="border border-gray-400 py-1">SN</th>
+                            <th class="border border-gray-400 py-1">Name</th>
+                            <th class="border border-gray-400 py-1">Phone</th>
+                            <th class="border border-gray-400 py-1">Subject</th>
+                            <th class="border border-gray-400 py-1">Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach ($bookings as $i => $booking)
+                            <tr>
+                                <td class="border border-gray-400 py-1">
+                                    {{ ++$i }}
+                                </td>
+                                <td class="border border-gray-400 py-1">
+                                    {{ $booking->name }}
+                                </td>
+                                <td class="border border-gray-400 py-1">
+                                    {{ $booking->phone }}
+                                </td>
+                                <td class="border border-gray-400 py-1">
+                                    {{ $booking->subject }}
+                                </td>
+                                <td class="border border-gray-400 py-1">
+                                    edit delete
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>

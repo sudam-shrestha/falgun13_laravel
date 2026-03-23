@@ -11,20 +11,23 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        :root{
-            --primary:#df4f30;
+        :root {
+            --primary: #df4f30;
         }
+
         .container {
             width: 86%;
             margin: auto;
         }
-        button{
+
+        button {
             cursor: pointer;
         }
     </style>
 </head>
 
 <body>
+    @include('sweetalert::alert')
 
     <x-navbar />
 
