@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Booking;
+use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -36,4 +37,23 @@ Route::post("/booking/store", function (Request $req) {
     $booking->save();
     toast("Your request has been submitted.", "success");
     return redirect("/booking/create");
+});
+
+
+Route::get("/courses", function(){
+    $courses = Course::all();
+    return view("course.index", compact('courses'));
+});
+
+Route::get("/course/create", function(){
+    return view("course.create");
+});
+
+Route::post("/course/store", function(Request $request){
+    $course = new Course();
+    $course->name = $request->name;
+    $course->price = $request->price;
+    $course->save();
+    toast("Course created successfully.", "success");
+    return redirect("/courses");
 });

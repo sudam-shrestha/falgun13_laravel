@@ -7,6 +7,7 @@
             <a href="/">Home</a>
             <a href="/about">About</a>
             <a href="/services">Service</a>
+            <a href="/courses">Course</a>
         </div>
     </nav>
 </header>
