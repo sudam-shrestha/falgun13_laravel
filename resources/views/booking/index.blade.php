@@ -7,7 +7,7 @@
                     add new +
                 </a>
             </div>
-           
+
             <div>
                 <table class="w-full text-center">
                     <thead>
@@ -35,8 +35,17 @@
                                 <td class="border border-gray-400 py-1">
                                     {{ $booking->subject }}
                                 </td>
-                                <td class="border border-gray-400 py-1">
-                                    edit delete
+                                <td class="border border-gray-400 py-1 flex gap-2 items-center justify-center">
+                                    <a href="/booking/edit/{{$booking->id}}" class="text-[#12c0f0]">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                    <form action="/booking/delete/{{ $booking->id }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="text-[red]">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
