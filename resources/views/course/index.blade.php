@@ -13,6 +13,7 @@
                     <thead>
                         <tr class="bg-gray-300">
                             <th class="border border-gray-400 py-1">SN</th>
+                            <th class="border border-gray-400 py-1">Image</th>
                             <th class="border border-gray-400 py-1">Name</th>
                             <th class="border border-gray-400 py-1">Price</th>
                             <th class="border border-gray-400 py-1">Action</th>
@@ -22,17 +23,29 @@
                     <tbody>
                         @foreach ($courses as $i => $course)
                             <tr>
-                                <td class="border border-gray-400 py-1">
+                                <td class="border border-gray-400 h-[60px] py-1">
                                     {{ ++$i }}
                                 </td>
-                                <td class="border border-gray-400 py-1">
+                                <td class="border border-gray-400 h-[60px] py-1">
+                                    <img src="{{ asset($course->image) }}" class="h-[40px]" alt="">
+                                </td>
+                                <td class="border border-gray-400 h-[60px] py-1">
                                     {{ $course->name }}
                                 </td>
-                                <td class="border border-gray-400 py-1">
+                                <td class="border border-gray-400 h-[60px] py-1">
                                     Rs.{{ $course->price }}
                                 </td>
-                                <td class="border border-gray-400 py-1">
-                                    edit delete
+                                <td class="border border-gray-400 h-[60px] py-1 flex gap-2 items-center justify-center">
+                                    <a href="/course/edit/{{ $course->id }}" class="text-[#12c0f0]">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                    <form action="/course/delete/{{ $course->id }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="text-[red]">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

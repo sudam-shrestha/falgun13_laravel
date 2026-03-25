@@ -9,7 +9,7 @@
             </div>
 
             <div>
-                <form action="/course/store" method="post">
+                <form action="/course/store" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="grid grid-cols-2 gap-6">
                         <div>
@@ -18,9 +18,13 @@
                         </div>
                         <div>
                             <label for="price">Course Fee</label>
-                            <input type="tel" name="price" id="price" class="border w-full px-2 py-1">
+                            <input type="number" name="price" id="price" class="border w-full px-2 py-1">
                         </div>
                         <div>
+                            <label for="image">Image</label>
+                            <input type="file" name="image" id="image" class="border w-full px-2 py-1">
+                        </div>
+                        <div class="col-span-2">
                             <button type="submit"
                                 class="bg-(--primary)/90 hover:bg-(--primary) px-4 py-2 rounded text-white">
                                 Submit Record

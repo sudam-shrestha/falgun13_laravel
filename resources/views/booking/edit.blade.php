@@ -30,7 +30,7 @@
                         </div>
                         <div class="col-span-2">
                             <label for="request">Your Request</label>
-                            <textarea name="your_request" id="request" rows="4" class="border w-full px-2 py-1">{{ $booking->subject }}</textarea>
+                            <textarea name="your_request" id="request" rows="4" class="border w-full px-2 py-1">{{ $booking->request }}</textarea>
                         </div>
                         <div>
                             <button type="submit"

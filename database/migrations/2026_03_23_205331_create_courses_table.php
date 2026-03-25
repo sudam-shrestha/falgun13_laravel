@@ -15,12 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string("name");
             $table->double("price");
+            $table->string("image")->nullable();
             $table->timestamps();
         });
-    }
+    }   
 
     /**
-     * Reverse the migrations.
+     * Reverse the migrations./images/profile.jpg
      */
     public function down(): void
     {
